@@ -33,10 +33,10 @@
           <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
         </ul>
         <ul>
-          <li><a href="">공지사항</a></li>
-          <li><a href="">자료실</a></li>
-          <li><a href="">FAQ</a></li>
-          <li><a href="">Tip</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">자료실</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Tip</a></li>
         </ul>
       </div>
     </div>
@@ -101,7 +101,21 @@
           </div>
           {{/my_profile}}
         </li>
-        <li class="item">{{link "requests" role="menuitem"}}</li>
+        <li class="nav-divider"></li>
+        <ul>
+          <li><a href="#">사용 안내</a></li>
+          <li><a href="#">소프트웨어</a></li>
+        </ul>
+        <ul>
+          <li class="item">{{link 'new_request' role="menuitem" class='submit-a-request'}}</li>
+        </ul>
+        <ul>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">자료실</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Tip</a></li>
+        </ul>
+        <li class="nav-divider"></li>
         <li class="item">{{#link "contributions" role="menuitem"}}{{t "activities"}}{{/link}}</li>
         <li class="item">{{contact_details role="menuitem"}}</li>
         <li class="item">{{change_password role="menuitem" class='change-password'}}</li>
