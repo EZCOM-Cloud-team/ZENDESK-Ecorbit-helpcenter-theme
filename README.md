@@ -1,0 +1,1 @@
+# ZENDESK-Ecorbit-helpcenter-theme
