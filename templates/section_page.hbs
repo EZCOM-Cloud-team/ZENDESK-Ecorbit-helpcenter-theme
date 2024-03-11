@@ -90,12 +90,14 @@
 
     <section id="main-content" class="section-content">
       <header class="page-header">
-        <h1>{{section.name}}</h1>
+        <div>
+          <h1>{{section.name}}</h1>
+          {{#if section.description}}
+          <p class="page-header-description">{{section.description}}</p>
+          {{/if}}
+        </div>
         {{#if settings.show_follow_section}}
         <div class="section-subscribe">{{subscribe}}</div>
-        {{/if}}
-        {{#if section.description}}
-        <p class="page-header-description">{{section.description}}</p>
         {{/if}}
         <div class="wrapper">
           <p>총 {{section.article_count}}건</p>
