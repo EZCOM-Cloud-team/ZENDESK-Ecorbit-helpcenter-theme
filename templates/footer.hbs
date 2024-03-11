@@ -1,6 +1,6 @@
 <footer class="footer">
   <div class="footer-inner">
-    {{#link 'help_center'}}{{help_center.name}}{{/link}}
+    {{#link "help_center"}}{{help_center.name}}{{/link}}
 
     <div class="footer-language-selector">
       {{#if alternative_locales}}
@@ -25,55 +25,61 @@
   </div>
 
   <script>
+    //날짜 포맷
     function formatDate(dateString) {
-      // Parse the date string
+      // Parse the date string 
       const utcDate = new Date(dateString);
-
-      // Calculate the offset for the Korea time zone (UTC+9)
+      // Calculate the offset for the Korea time zone (UTC+9) 
       const koreaOffset = 9 * 60 * 60 * 1000;
-
-      // Adjust the date by adding the offset
+      // Adjust the date by adding the offset 
       const koreanDate = new Date(utcDate.getTime() + koreaOffset);
-
       // Format the date as you desire
       const formattedDate = `${koreanDate.getFullYear()}-${(koreanDate.getMonth() + 1).toString().padStart(2, '0')}-${koreanDate.getDate().toString().padStart(2, '0')}`;
-
       return formattedDate;
     }
-
     const timeStamps = document.querySelectorAll('.timestamp');
     timeStamps.forEach((node) => {
       const dateString = node.innerText.trim();
       node.innerText = formatDate(dateString);
       console.log(formatDate(dateString))
     })
-  </script>
-  <script>
+
+    //상단 내비게이션 이벤트
     const currentPage = window.location.href;
     const mainNav = document.querySelector('.main-nav');
     const mainNavItem = document.querySelector('.main-nav-item');
-
     if (mainNav) {
       mainNav.addEventListener('mouseover', () => {
         mainNavItem.classList.add('active')
-      })
+      }
+      )
 
       mainNavItem.addEventListener('mouseleave', () => {
         mainNavItem.classList.remove('active')
-      })
+      }
+      )
     }
 
+    //문서 드롭다운 이벤트
+    const articleListItem = document.querySelectorAll('.article-list-item');
     const btnDropDown = document.querySelectorAll('.btn-dropdown-article');
     const dropDownArticle = document.querySelectorAll('.dropdown-article');
     if (btnDropDown) {
       btnDropDown.forEach((btn, index) => {
-
         btn.addEventListener('click', () => {
-          btn.classList.toggle('active');
-          dropDownArticle[index].classList.toggle('active')
+          articleListItem[index].classList.toggle('active');
         })
       })
     }
 
+    //사용 안내 섹션 레이아웃 변경
+    const fullLayout = document.querySelector('.full-display-layout');
+    const initialLayout = document.querySelector('.initial-layout');
+    const url = window.location.href
+    if (url.includes('articles/9174786854799') || url.includes('articles/9174823130767')) {
+      initialLayout.classList.remove('active');
+      fullLayout.classList.add('active')
+    }
+    console.log(url)
   </script>
 </footer>

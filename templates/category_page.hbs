@@ -1,13 +1,15 @@
+{{#isnt category.id 8772471651215}}
 <div class="container-divider"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
     <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+        class="search-icon" aria-hidden="true">
+        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
       </svg>
-      {{search scoped=settings.scoped_kb_search submit=false}}
+      {{search scoped=settings.scoped_kb_search submit=true placeholder="검색어를 입력해주세요"}}
     </div>
   </nav>
 
@@ -16,48 +18,174 @@
       <header class="page-header">
         <h1>{{category.name}}</h1>
         {{#if category.description}}
-          <p class="page-header-description">{{category.description}}</p>
+        <p class="page-header-description">{{category.description}}</p>
         {{/if}}
       </header>
 
       <div id="main-content" class="section-tree">
         {{#each sections}}
-          <section class="section">
-            <h2 class="section-tree-title">
-              <a href="{{url}}">{{name}}</a>
-            </h2>
-            {{#if articles}}
-              <ul class="article-list">
-                {{#each articles}}
-                  <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
-                    {{#if promoted}}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="icon-star" title="{{t 'promoted'}}">
-                        <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"/>
-                      </svg>
-                    {{/if}}
-                    <a href="{{url}}" class="article-list-link">{{title}}</a>
-                    {{#if internal}}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
-                        <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-                        <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-                      </svg>
-                    {{/if}}
-                  </li>
-                {{/each}}
-              </ul>
-              {{#if more_articles}}
-                <a href="{{url}}" class="see-all-articles">
-                  {{t 'show_all_articles' count=article_count}}
-                </a>
+        <section class="section">
+          <h2 class="section-tree-title">
+            <a href="{{url}}">{{name}}</a>
+          </h2>
+          {{#if articles}}
+          <ul class="article-list">
+            {{#each articles}}
+            <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
+              {{#if promoted}}
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+                class="icon-star" title="{{t 'promoted'}}">
+                <path fill="currentColor"
+                  d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z" />
+              </svg>
               {{/if}}
-            {{/if}}
-          </section>
+              <a href="{{url}}" class="article-list-link">{{title}}</a>
+              {{#if internal}}
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+                class="icon-lock" title="{{t 'internal'}}">
+                <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
+                <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
+              </svg>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{#if more_articles}}
+          <a href="{{url}}" class="see-all-articles">
+            {{t 'show_all_articles' count=article_count}}
+          </a>
+          {{/if}}
+          {{/if}}
+        </section>
         {{else}}
-          <i class="category-empty">
-            <a href="{{category.url}}">{{t 'empty'}}</a>
-          </i>
+        <i class="category-empty">
+          <a href="{{category.url}}">{{t 'empty'}}</a>
+        </i>
         {{/each}}
       </div>
     </div>
   </div>
 </div>
+{{/isnt}}
+
+{{!-- FAQ 카테고리 --}}
+{{#is category.id 8772471651215}}
+<div class="container">
+  <nav class="sub-nav">
+    {{breadcrumbs}}
+  </nav>
+
+  <div class="faq">
+    <div class="category-content">
+      <header class="page-header">
+        <h1>{{category.name}}</h1>
+        {{#if category.description}}
+        <p class="page-header-description">{{category.description}}</p>
+        {{/if}}
+        <div class="search-container">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+            class="search-icon" aria-hidden="true">
+            <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor" />
+            <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5" />
+          </svg>
+          {{search scoped=settings.scoped_kb_search submit=true placeholder="검색어를 입력해주세요"}}
+        </div>
+      </header>
+
+      <nav class="faq-nav">
+        <div class="nav-wrapper">
+
+          {{!-- {{#each sections}} --}}
+          <h2>인프라</h2>
+          <ul>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8779610894607">소프트웨어</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772460093327">PC & 모니터</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772505153295">DLP</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772505153295-DLP">네트워크</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772471651215">VPN</a></li>
+          </ul>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <h2>어플리케이션</h2>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772490990223">SAP</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772507284367">T-Account</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772481021839">T-HR</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772462365199">T-Market</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772512651407">GroupWare</a></li>
+          </ul>
+          {{!-- {{/each}} --}}
+        </div>
+      </nav>
+      <div id="main-content">
+        <h3>자주 찾는 질문 BEST 5</h3>
+        <ul class="article-list">
+          {{#each sections}}
+          {{#if articles}}
+          {{#each articles}}
+          {{#if promoted}}
+          <li class="article-list-item article-promoted">
+            <p class="label">Q.</p>
+            <a href="{{url}}" class="article-list-link">{{title}}</a>
+            <button class="btn-dropdown-article" type="button">
+              <i class="fi fi-rr-angle-down"></i>
+            </button>
+            {{#if internal}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
+              class="icon-lock" title="{{t 'internal'}}">
+              <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
+              <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
+            </svg>
+            {{/if}}
+            <div class="dropdown-article">
+              <header class="article-header">
+                <div class="article-author">
+
+                  <div class="avatar article-avatar">
+                    {{#if author.agent}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
+                      class="icon-agent" aria-label="{{t 'team_member' name=author.name}}">
+                      <path fill="currentColor"
+                        d="M6 0C2.7 0 0 2.7 0 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.3 7H3.7c-.3 0-.4-.3-.3-.5C3.9 7.6 4.9 7 6 7s2.1.6 2.6 1.5c.1.2 0 .5-.3.5z" />
+                    </svg>
+                    {{/if}}
+                    <img src="{{author.avatar_url}}" alt="" class="user-avatar" />
+                  </div>
+                  <div class="article-meta">
+
+                    {{#link 'user_profile' id=author.id}}
+                    {{author.name}}
+                    {{/link}}
+
+                    <ul class="meta-group">
+                      {{#is created_at edited_at}}
+                      <li class="meta-data">{{date created_at timeago=true}}</li>
+                      {{else}}
+                      <li class="meta-data">{{date edited_at timeago=true}}</li>
+                      <li class="meta-data">{{t 'updated'}}</li>
+                      {{/is}}
+                    </ul>
+                  </div>
+                </div>
+              </header>
+              <div class="article-content">
+                {{body}}
+              </div>
+            </div>
+          </li>
+          {{/if}}
+          {{/each}}
+          {{#if more_articles}}
+          <a href="{{url}}" class="see-all-articles">
+            {{t 'show_all_articles' count=article_count}}
+          </a>
+          {{/if}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{/is}}

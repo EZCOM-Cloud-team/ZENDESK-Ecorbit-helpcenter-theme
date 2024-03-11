@@ -48,7 +48,7 @@
 					"type": "color",
 					"description": "link_color_description",
 					"label": "link_color_label",
-					"value": "#1F73B7"
+					"value": "#00754E"
 				},
 				{
 					"identifier": "hover_link_color",
@@ -338,7 +338,7 @@
 					"type": "checkbox",
 					"description": "article_comments_description",
 					"label": "article_comments_label",
-					"value": true
+					"value": false
 				},
 				{
 					"identifier": "show_follow_article",
@@ -366,7 +366,7 @@
 					"type": "checkbox",
 					"description": "article_sharing_description",
 					"label": "article_sharing_label",
-					"value": true
+					"value": false
 				}
 			]
 		},
