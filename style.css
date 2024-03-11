@@ -1712,8 +1712,10 @@ input[type="submit"][disabled] {
 }
 
 .blocks-item img {
-	width: fit-content;
-	filter: contrast(0);
+	width: 6rem;
+}
+.blocks-item:hover img {
+	filter: contrast(0) brightness(2)
 }
 
 /***** Homepage *****/
