@@ -31,7 +31,7 @@
           {{#if articles}}
           <ul class="article-list">
             {{#each articles}}
-            <li class="article-list-item{{#if promoted}} article-promoted{{/if}}">
+            <li class="article-list-item{{#if promoted}} article-promoted{{/if}}{{#if internal}}internal{{/if}}">           
               {{#if promoted}}
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12"
                 class="icon-star" title="{{t 'promoted'}}">
@@ -40,13 +40,7 @@
               </svg>
               {{/if}}
               <a href="{{url}}" class="article-list-link">{{title}}</a>
-              {{#if internal}}
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16"
-                class="icon-lock" title="{{t 'internal'}}">
-                <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1" />
-                <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5" />
-              </svg>
-              {{/if}}
+              
             </li>
             {{/each}}
           </ul>
@@ -101,8 +95,8 @@
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8779610894607">소프트웨어</a></li>
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8772460093327">PC & 모니터</a></li>
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8772505153295">DLP</a></li>
-            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772505153295-DLP">네트워크</a></li>
-            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772471651215">VPN</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772505153295">네트워크</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772456533519">VPN</a></li>
           </ul>
         </div>
         <div class="nav-wrapper">
@@ -112,7 +106,7 @@
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8772507284367">T-Account</a></li>
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8772481021839">T-HR</a></li>
             <li><a href="https://support.ecorbit.com/hc/ko/sections/8772462365199">T-Market</a></li>
-            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772512651407">GroupWare</a></li>
+            <li><a href="https://support.ecorbit.com/hc/ko/sections/8772512651407">그룹웨어</a></li>
           </ul>
           {{!-- {{/each}} --}}
         </div>
@@ -175,11 +169,6 @@
           </li>
           {{/if}}
           {{/each}}
-          {{#if more_articles}}
-          <a href="{{url}}" class="see-all-articles">
-            {{t 'show_all_articles' count=article_count}}
-          </a>
-          {{/if}}
           {{/if}}
           {{/each}}
         </ul>

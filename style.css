@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /***** Normalize.css *****/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@font-face {
+	font-family: "Pretendard-Regular";
+	src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -873,7 +880,7 @@ input[type="submit"][disabled] {
 	display: flex;
 	justify-content: center;
 	gap: 5.8rem;
-	margin-left: 10rem;
+	margin-left: 9rem;
 	padding: 1.2rem 1rem;
 }
 
@@ -1715,7 +1722,7 @@ input[type="submit"][disabled] {
 	width: 6rem;
 }
 .blocks-item:hover img {
-	filter: contrast(0) brightness(2)
+	filter: contrast(0) brightness(2);
 }
 
 /***** Homepage *****/
@@ -2017,6 +2024,10 @@ input[type="submit"][disabled] {
 	font-size: 16px;
 }
 
+.article-list-item.internal {
+	background-color: #e5e5e5;
+}
+
 .notification-section .article-list-item {
 	border-bottom: 1px solid $border_color;
 }
@@ -2244,7 +2255,7 @@ input[type="submit"][disabled] {
 
 .article-banner {
 	padding: 10rem 5% 1rem;
-	background: linear-gradient(267deg, #AED6AD 28.47%, #2B9F78 86.43%);
+	background: linear-gradient(267deg, #aed6ad 28.47%, #2b9f78 86.43%);
 }
 
 .article-banner h1 {
@@ -5729,7 +5740,7 @@ html[dir="rtl"] .notification-left-aligned {
 }
 
 @media (width > 768px) {
-	.faq .page-header{
+	.faq .page-header {
 		align-items: center;
 	}
 }
@@ -5763,10 +5774,10 @@ html[dir="rtl"] .notification-left-aligned {
 }
 
 .faq .article-list-item {
-	display:  block;
+	display: block;
 	white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	border-bottom: 1px solid #cccccc;
 }
 
@@ -5783,7 +5794,7 @@ html[dir="rtl"] .notification-left-aligned {
 
 .faq .label {
 	display: inline-block;
-	margin: 0.6rem
+	margin: 0.6rem;
 }
 
 .faq .btn-dropdown-article {
@@ -5802,7 +5813,7 @@ html[dir="rtl"] .notification-left-aligned {
 
 	.faq-nav .nav-wrapper {
 		width: 100%;
-		padding: 1.6rem 2.4rem
+		padding: 1.6rem 2.4rem;
 	}
 
 	.faq h1 {
@@ -5816,4 +5827,3 @@ html[dir="rtl"] .notification-left-aligned {
 		font-size: 14px;
 	}
 }
-
