@@ -865,7 +865,7 @@ input[type="submit"][disabled] {
 	display: none;
 	position: absolute;
 	left: 0;
-	top: 4.5rem;
+	top: 4.4rem;
 	width: 100vw;
 	background-color: rgba(256, 256, 256, 0.8);
 	backdrop-filter: blur(10px);
