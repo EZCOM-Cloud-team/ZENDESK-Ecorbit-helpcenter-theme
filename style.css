@@ -864,7 +864,7 @@ input[type="submit"][disabled] {
 .main-nav-item {
 	display: none;
 	position: absolute;
-	left: 0;
+	left: 4px;
 	top: 4.4rem;
 	width: 100vw;
 	background-color: rgba(256, 256, 256, 0.8);
