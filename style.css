@@ -1492,7 +1492,7 @@ input[type="submit"][disabled] {
 
 /***** Hero component *****/
 .hero {
-	background-image: url('./assets/main-banner-img.png');
+	background-image: url($homepage_background_image);
 	background-position: center;
 	background-size: cover;
 	height: 300px;
