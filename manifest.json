@@ -1,7 +1,7 @@
 {
 	"name": "Ecorbit Helpcenter Theme",
 	"author": "Ezcom",
-	"version": "2.2.9",
+	"version": "2.3.0",
 	"api_version": 2,
 	"default_locale": "en-us",
 	"settings": [
@@ -77,6 +77,13 @@
 					"description": "border_color_label",
 					"label": "border_color_label",
 					"value": "#cccccc"
+				},
+				{
+					"identifier": "contrast_color",
+					"type": "color",
+					"description": "brand_contrast_color",
+					"label": "brand_contrast_color",
+					"value": "#ff9300"
 				}
 			]
 		},

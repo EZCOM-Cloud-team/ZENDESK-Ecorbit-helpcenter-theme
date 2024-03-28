@@ -879,7 +879,7 @@ input[type="submit"][disabled] {
 .main-nav-item-wrapper {
 	display: flex;
 	justify-content: center;
-	gap: 5.8rem;
+	gap: 5.2rem;
 	margin-left: 9rem;
 	padding: 1.2rem 1rem;
 }
@@ -1313,30 +1313,29 @@ input[type="submit"][disabled] {
 }
 
 .search {
-	border-color: #ddd;
+	border: 3px solid black;
+	box-shadow: 4px 4px 4px #8e8e8e8e;
 	border-radius: 30px;
 	border-style: solid;
 	border-width: 1px;
 	display: flex;
 	position: relative;
 	transition: border 0.12s ease-in-out;
+	min-width: 20rem;
 }
 
 .search:focus-within {
-	border-color: $brand_color;
+	border-color: black;
 }
 
 .search input[type="search"],
 .search .clear-button {
 	background-color: #fff;
 	border-radius: 30px;
-	border: none;
+	border: 1px solid black;
 }
 
-.search-full input[type="search"],
-.search-full .clear-button {
-	border-color: #fff;
-}
+
 
 .search input[type="search"] {
 	appearance: none;
@@ -1377,13 +1376,13 @@ input[type="submit"][disabled] {
 }
 
 .search .clear-button:hover {
-	background-color: $brand_color;
+	background-color: black;
 	color: #fff;
 }
 
 .search .clear-button:focus {
 	outline: 0;
-	box-shadow: 0 0 0 3px $brand_color;
+	box-shadow: 0 0 0 3px black;
 }
 
 .search-has-value .clear-button {
@@ -1402,7 +1401,7 @@ input[type="submit"][disabled] {
 }
 
 [dir="ltr"] .search-has-value input[type="search"]:focus {
-	border-right-color: $brand_color;
+	border-right-color: black;
 }
 
 [dir="ltr"] .search .clear-button {
@@ -1412,7 +1411,7 @@ input[type="submit"][disabled] {
 }
 
 [dir="ltr"] .search .clear-button:focus {
-	border-left-color: $brand_color;
+	border-left-color: black;
 }
 
 [dir="rtl"] .search input[type="search"] {
@@ -1427,7 +1426,7 @@ input[type="submit"][disabled] {
 }
 
 [dir="rtl"] .search-has-value input[type="search"]:focus {
-	border-left-color: $brand_color;
+	border-left-color:black;
 }
 
 [dir="rtl"] .search .clear-button {
@@ -1437,7 +1436,7 @@ input[type="submit"][disabled] {
 }
 
 [dir="rtl"] .search .clear-button:focus {
-	border-right-color: $brand_color;
+	border-right-color: black;
 }
 
 .search-icon {
@@ -1458,11 +1457,22 @@ input[type="submit"][disabled] {
 	right: 15px;
 }
 
+.hero .search {
+	box-shadow: 4px 4px 4px #0080009c;
+}
+
 .hero input[type="submit"] {
-	position: absolute;
-	right: 0;
 	width: 10rem;
 	height: 40px;
+}
+
+.search input[type="submit"] {
+	position: absolute;
+	right: 0;
+	height: 40px;
+	background-color: black;
+	color: white;
+	font-weight: 600;
 }
 
 @media (width < 575px) {
@@ -1482,7 +1492,7 @@ input[type="submit"][disabled] {
 
 /***** Hero component *****/
 .hero {
-	background-image: url($homepage_background_image);
+	background-image: url('./assets/main-banner-img.png');
 	background-position: center;
 	background-size: cover;
 	height: 300px;
