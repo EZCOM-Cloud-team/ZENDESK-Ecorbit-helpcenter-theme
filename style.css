@@ -1492,7 +1492,8 @@ input[type="submit"][disabled] {
 
 /***** Hero component *****/
 .hero {
-	background-image: url($homepage_background_image);
+	/* background-image: url($homepage_background_image); */
+	background-image: url($assets-main-banner-img-png);
 	background-position: center;
 	background-size: cover;
 	height: 300px;
@@ -5835,5 +5836,109 @@ html[dir="rtl"] .notification-left-aligned {
 	}
 	.article-list-item {
 		font-size: 14px;
+	}
+}
+
+.form-select-menu ul {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+@media(575px < width < 1024px) {
+	.form-select-menu ul {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+
+.form-select-menu li {
+	padding: 1rem;
+	border: 2px solid #d5d5d5;
+	border-radius: 5px;
+}
+
+.form-select-menu li:hover {
+	border: 2px solid $brand_color;
+}
+
+.form-select-menu .selected {
+	grid-row: span 2;
+	border: 2px solid $brand_color;
+}
+/* 
+.form-select-menu li:nth-child(9).selected {
+	grid-row-end: 4;
+	grid-column-start: 2;
+}
+.form-select-menu li:nth-child(10).selected {
+	grid-row-end: 4;
+	grid-column-start: 3;
+}
+.form-select-menu li:nth-child(11).selected  {
+	grid-row-end: 4;
+	grid-column-start: 4;
+} */
+
+.form-select-menu a {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+	height: 100%;
+	font-size: 1.2rem;
+	font-weight: 600;
+	color: #555;
+}
+
+.form-select-menu .folded a {
+	color: #8e8e8e
+}
+
+.form-select-menu a:hover,
+.form-select-menu .selected a {
+	color: $brand_color;
+}
+
+.form-select-menu .img-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.form-select-menu .folded .img-wrapper {
+	display: none;
+}
+
+.form-select-menu .folded .selected .img-wrapper {
+	display: inherit;
+}
+
+.form-select-menu img {
+	max-width: 100%;
+}
+
+.form-select-menu .selected img {
+	width: 60%;
+}
+
+.form.inactive {
+	display: none;
+}
+
+
+@media (width < 575px) {
+	.form-select-menu ul {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.6rem;
+	}
+
+	.form-select-menu li {
+		padding: 0.6rem;
+	}
+
+	.form-select-menu a {
+		font-size: 1rem;
 	}
 }

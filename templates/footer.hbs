@@ -80,6 +80,33 @@
       initialLayout.classList.remove('active');
       fullLayout.classList.add('active')
     }
-    console.log(url)
+
+    //문의등록 페이지
+    const formData = {
+      9396262528783: "sap",
+      9396613790479: "tableau",
+      9400419884175: "dlp",
+      9396772890639: "google",
+      9396343407631: "tAccounting",
+      9396481705615: "tMarket",
+      9396543350287: "tHR",
+      9396591737615: "groupware",
+      9396663504143: "network",
+      9400347059215: "ssdam",
+      9396797439375: "etc"
+    }
+
+
+    if (url.includes('ticket_form_id')) {
+      for (const id in formData) {
+        if (url.includes(id)) {
+          document.querySelector('.form').classList.remove('inactive');
+          document.querySelector('.form-select-menu ul').classList.add('folded');
+          document.querySelector('.request_ticket_form_id').style.display = 'none';
+          const formItem = document.getElementById(formData[id]);
+          formItem.classList.add('selected')
+        }
+      }
+    }
   </script>
 </footer>
