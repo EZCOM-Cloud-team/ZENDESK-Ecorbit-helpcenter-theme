@@ -96,17 +96,17 @@
       9396797439375: "etc"
     }
 
+    if ((url.includes('ticket_form_id')) || ((url.includes('/requests') && document.querySelector('.notification-error')))) {
+      document.querySelector('.form').classList.remove('inactive');
+      document.querySelector('.form-select-menu ul').classList.add('folded');
+      document.querySelector('.request_ticket_form_id').style.display = 'none';
 
-    if (url.includes('ticket_form_id')) {
-      for (const id in formData) {
-        if (url.includes(id)) {
-          document.querySelector('.form').classList.remove('inactive');
-          document.querySelector('.form-select-menu ul').classList.add('folded');
-          document.querySelector('.request_ticket_form_id').style.display = 'none';
-          const formItem = document.getElementById(formData[id]);
-          formItem.classList.add('selected')
-        }
-      }
+      const selectedForm = document.querySelector('#request_issue_type_select')
+      const selectedIndex = selectedForm.selectedIndex;
+      const selectedValue = selectedForm.options[selectedIndex].value
+
+      const formItem = document.getElementById(formData[selectedValue]);
+      formItem.classList.add('selected')
     }
   </script>
 </footer>
