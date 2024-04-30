@@ -14,7 +14,6 @@
   <section class="section knowledge-base">
     <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
     <section class="categories blocks">
-      {{!-- TODO: 아이콘 변경 --}}
       <ul class="blocks-list">
         <li class="blocks-item"> <a href='https://support.ecorbit.com/hc/ko/categories/8936102913295'
             class="blocks-item-link">
@@ -36,6 +35,14 @@
             <img src="{{asset 'icon-sw.png'}}">
             <span class="blocks-item-title">SW 다운로드</span>
           </a></li>
+        {{#each categories}}
+        {{#is id 9632217402127}}
+        <li class="blocks-item">
+          <a href="{{url}}" class="blocks-item-link">
+            <span>{{name}}</span></a>
+        </li>
+        {{/is}}
+        {{/each}}
       </ul>
     </section>
 

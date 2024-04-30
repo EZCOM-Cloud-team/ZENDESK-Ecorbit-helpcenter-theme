@@ -1631,7 +1631,6 @@ input[type="submit"][disabled] {
 	box-sizing: border-box;
 	color: $brand_color;
 	display: flex;
-	/* flex: 1 0 340px; */
 	flex: 1;
 	margin: 0 0 30px;
 	max-width: 100%;
@@ -1641,6 +1640,7 @@ input[type="submit"][disabled] {
 
 @media (min-width: 768px) {
 	.blocks-item {
+		flex: 1 0 240px;
 		margin: 0 15px 30px;
 	}
 }
