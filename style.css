@@ -911,12 +911,6 @@ input[type="submit"][disabled] {
 	}
 }
 
-@media (575px < width <= 768px) {
-	.blocks-list {
-		gap: 1rem;
-	}
-}
-
 @media (min-width: 768px) {
 	.user-nav {
 		position: relative;
@@ -1612,16 +1606,22 @@ input[type="submit"][disabled] {
 /***** Blocks *****/
 /* Used in Homepage#categories and Community#topics */
 .blocks-list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 	padding: 0;
+	gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 575px) {
 	.blocks-list {
 		margin: 0 -15px;
+		
+	}
+}
+
+@media (max-width: 768px) {
+	.blocks-list {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -1636,19 +1636,6 @@ input[type="submit"][disabled] {
 	max-width: 100%;
 	text-align: center;
 	font-weight: bold;
-}
-
-@media (min-width: 768px) {
-	.blocks-item {
-		flex: 1 0 240px;
-		margin: 0 15px 30px;
-	}
-}
-
-@media (max-width: 575px) {
-	.blocks-list {
-		flex-direction: column;
-	}
 }
 
 .blocks-item:hover,
